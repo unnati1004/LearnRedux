@@ -1,7 +1,7 @@
 import { configureStore, createAsyncThunk } from "@reduxjs/toolkit";
 import { counterSlice } from "../features/counter/counterSlice";
 // import { todoSlice } from "../features/todo/todoSlice";
-import {ListSlice} from "../features/todo/ListSlice";
+import {ListSlice} from "../features/todoList/ListSlice";
 
 
 

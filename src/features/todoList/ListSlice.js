@@ -1,7 +1,5 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
-
-
 export const ListSlice = createSlice({
      name: "list",
      initialState:{
@@ -16,7 +14,7 @@ export const ListSlice = createSlice({
           state.data.push(todo)
        },
        removeTodo:(state,action)=>{
-          state.data = state.data.filter((todo)=>{todo.id !== action.payload})
+          state.data = state.data.filter((todo)=>todo.id !== action.payload)
        }
      //   updateTodo
 
