@@ -1,13 +1,14 @@
 import { configureStore, createAsyncThunk } from "@reduxjs/toolkit";
 import { counterSlice } from "../features/counter/counterSlice";
-import { todoSlice } from "../features/todo/todoSlice";
-
+// import { todoSlice } from "../features/todo/todoSlice";
+import {ListSlice} from "../features/todo/ListSlice";
 
 
 
 export const store = configureStore({
   reducer: {
     counter: counterSlice.reducer,
+    list: ListSlice.reducer,
     // todo: todoSlice.reducer,
   },
   
