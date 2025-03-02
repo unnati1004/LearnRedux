@@ -1,11 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { addTodo, removeTodo } from "../features/todoList/ListSlice";
+import { ThemeContext } from "../context/ThemeContext";
 
 export const TodoList = () => {
+    const [input, setInput] = useState("");
+    const theme = useContext(ThemeContext)
     const dispatch = useDispatch();
     const data = useSelector((state) => state.list.data);
-    const [input, setInput] = useState("");
 
     const handleChange = (e) => {
         setInput(e.target.value);
@@ -34,7 +36,7 @@ export const TodoList = () => {
             </div>
             <div>
                 {data.map((todo) => (
-                    <div key={todo.id} style={{ border: "2px solid black",display:"flex",justifyContent: "space-around" }}>
+                    <div key={todo.id} style={{ border: "2px solid black",display:"flex",  justifyContent: "space-around" }}>
                         <div>{todo.text}</div> 
                         <button onClick={() => handleRemove(todo.id)}>Delete</button>
                     </div>
